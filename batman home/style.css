@@ -1,0 +1,675 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+img.logo,
+.card img {
+    opacity: 0;
+    animation: fade-in 600ms ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url(./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url(./assets/fonts/Rajdhani-Regular.ttf);
+}
+
+:root {
+    --light-yellow: #ffff00;
+    --dark-yellow: #fbf184;
+    --dark-blue: #195870;
+    --dark-red: #811313;
+    --black-800: #000e09;
+    --black: #000000;
+    --gray: #c4c4c4;
+    --white: #ffffff;
+    --border-color: #bcbbbd40;
+
+    --bg-opacity: 0.4;
+    --gradient-blue: linear-gradient(135deg, #eddebf40, #19687d60);
+    --gradient-rose: linear-gradient(to right, rgba(237, 222, 191, var(--bg-opacity)) 40%, rgba(137, 0, 9, var(--bg-opacity)) 100%);
+}
+
+a {
+    color: var(--white);
+    text-decoration:none;
+}
+
+h1,
+button {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+button {
+    font-size: 20px;
+    outline: none;
+    border: 0;
+    color: var(--white);
+}
+
+button:focus {
+    outline: none;
+    border: 0
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 10px;
+}
+
+p {
+    width: 90%;
+    font-weight: 200;
+    color: var(--gray);
+    text-align: justify;
+}
+
+body {
+    position: relative;
+    background-color: black;
+    color: var(--white);
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.bg-img {
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -10;
+}
+
+#main-page {
+    padding: 0 6vw;
+}
+
+#nav-icons {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    width: 6rem;
+    right: calc(6vw - 3rem);
+    top: calc(50vh - 10vw);
+    z-index: 20;
+}
+
+#nav-icons img {
+    height: 2vw;
+    width: min-content;
+}
+
+#nav-icons img:hover {
+    filter: brightness(75%) sepia(80) saturate(20) hue-rotate(5deg);
+}
+
+#nav-icons img.fleche {
+    height: 4vw;
+    width: min-content;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vw 2vw;
+    border: 2px solid var(--border-color);
+}
+
+header a img {
+    height: 3vw;
+}
+
+header a img:hover {
+    filter: brightness(75%) sepia(80) saturate(20) hue-rotate(5deg);
+}
+
+header h2 {
+    height: min-content;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+header nav a#game {
+    text-decoration: underline;
+    color: white;
+}
+
+header nav h2#jeu {
+    font-weight: bold;
+}
+
+main {
+    border: 2px solid var(--border-color);
+    border-top: 0;
+    border-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 6rem 2rem;
+}
+
+main section#home-detail {
+    display: flex;
+    gap: 1vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+main section#home-detail p {
+    text-align: center;
+}
+
+main section#home-detail #buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+main section#home-detail .gradient-button {
+    background: var(--gradient-rose);
+    padding: 1.5vw 2vw;
+    text-transform: uppercase;
+    font-size: 1.5vw;
+    font-weight: 200;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+main section#home-detail .gradient-button:hover {
+    --bg-opacity: 1;
+    --gradient-rose: linear-gradient(to right, rgba(237, 222, 191, var(--bg-opacity)) 40%, rgba(137, 0, 9, var(--bg-opacity)) 100%);
+    background: var(--gradient-rose);
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+main section h3 {
+    text-transform: uppercase;
+}
+
+main .card-flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+main .card-flex-row .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+main .card-flex-row .card img {
+    object-fit: cover;
+    height: 30vw;
+    transition-duration: 600ms;
+    transition-timing-function: ease-in-out;
+}
+
+main .card-flex-row .card img:hover {
+    scale: 110%;
+}
+
+main .card-flex-row .card div#card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+main .card-flex-row .card div#card-info div#bat2 {
+    height: 15rem;
+    display: flex;
+}
+
+main .card-flex-row .card div#card-info div#bat2 img {
+    object-fit: contain;
+    scale: 20%;
+}
+
+
+main .card-flex-row .card h2 {
+    display: block;
+    width: fit-content;
+    white-space: nowrap;
+    font-size: 0.65rem;
+    font-weight: 200;
+    text-transform: capitalize;
+}
+
+main section#nemesis {
+    position: relative;
+}
+
+main section#nemesis .title {
+    position: relative;
+    width: fit-content;
+}
+
+main section#nemesis .title img {
+    height: 4rem;
+    position: absolute;
+    top: -2.75rem;
+    right: -3rem;
+}
+
+main section#nemesis img#bathome12 {
+    position: absolute;
+    height: 20vw;
+    right: -10.75vw;
+    bottom: -3.5rem;
+}
+
+main section#justice-league {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+main section#justice-league p {
+    width: 100%;
+}
+
+main section#justice-league h3 {
+    align-self: flex-start;
+}
+
+main section#justice-league img {
+    width: 98vw;
+}
+
+main section#multimedia .carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 6rem 0;
+}
+
+main section#multimedia .carousel img.fleche {
+    height: 2vw;
+}
+
+main section#multimedia .carousel .flex-items {
+    display: flex;
+    width: fit-content;
+    height: 9.5rem;
+}
+
+main section#multimedia .carousel .flex-items img {
+    height: 9.5rem;
+}
+
+main section#multimedia .carousel .flex-items .items-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--gradient-blue);
+    color: var(--gray);
+    border-radius: 0 5px 5px 0;
+}
+
+main section#multimedia .carousel .flex-items .items-info h2 {
+    text-transform: uppercase;
+    font-size: 0.65rem;
+}
+
+main section#multimedia .carousel .flex-items .items-info h4 {
+    font-size: 0.8rem;
+    font-weight: lighter;
+    opacity: 80%;
+}
+
+main section#multimedia .carousel .flex-items .items-info h5 span {
+    color: var(--light-yellow);
+}
+
+main section#multimedia .carousel .flex-items .items-info p {
+    max-width: 25vw;
+    font-size: 1vw;
+    text-align: left;
+}
+
+section#contact {
+    width: 100%;
+    background: var(--gradient-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+section#contact form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+section#contact input {
+    color: var(--gray);
+}
+
+section#contact .custom-input {
+    border: 0;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 0.5rem;
+    background: transparent;
+}
+
+section#contact .custom-input:focus,
+section#contact .custom-input:focus-visible, section#contact select:focus, section#contact select:focus-visible {
+    outline: none;
+    background: transparent;
+}
+
+section#contact select {
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    color: var(--border-color);
+    width: 100%;
+    flex: 1;
+    cursor: pointer;
+    border: 0;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 0.5rem;
+    background: transparent;
+}
+
+section#contact select::-ms-expand {
+    display: none;
+}
+
+section#contact .select {
+    position: relative;
+    padding: 1rem 0;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+section#contact .select::after {
+    content: '\25BC';
+    position: absolute;
+    right: 0;
+    color: var(--border-color);
+}
+
+section#contact select option {
+    color: var(--gray);
+    padding-top: 1rem;
+    background-image: var(--gradient-blue);
+    background: #195870;
+}
+
+section#contact .buttons-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+section#contact .btn-select {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    font-size: 0.75rem;
+    font-weight: 200;
+    border: 2px solid;
+    border-image-source: var(--gradient-blue);
+    border-image-slice: 1;
+    background-origin: border-box;
+}
+
+section#contact .btn-select:hover {
+    color: var(--gray);
+    background: var(--gradient-blue);
+}
+
+section#contact .btn-select::selection {
+    background: var(--gradient-blue);
+}
+
+section#contact .btn-submit {
+    width: fit-content;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: var(--gradient-rose);
+    font-size: 1rem;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+footer {
+    margin: 0 6vw;
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+    border-top: 0;
+    border-bottom: 0;
+}
+
+footer #box-slogan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20rem;
+    padding: 3rem;
+}
+
+footer #box-slogan img {
+    height: 3rem;
+}
+
+footer #box-slogan #guillemet_1 {
+    align-self: flex-start;
+}
+
+footer #box-slogan #guillemet_2 {
+    align-self: flex-end;
+}
+
+footer #slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1rem;
+}
+
+footer #slogan h4 {
+    font-size: 0.6rem;
+    padding-bottom: .75rem;
+    width: 75%;
+}
+
+footer #slogan h5 {
+    font-size: 0.45rem;
+    color: var(--gray);
+    width: 35%;
+}
+
+footer #box-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+footer #foot {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+footer #foot img {
+    scale: 75%;
+}
+
+footer #foot p {
+    font-size: 0.4rem;
+}
+
+footer #logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+
+}
+
+footer #logos img {
+    scale: 60%;
+}
+
+footer #logos #logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+footer #logos #reso {
+    display: flex;
+    gap: 0.75rem;
+}
+
+@media screen and (max-width: 628px) {
+    main .card-flex-row {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    main .card-flex-row .card img {
+        height: 60vw;
+    }
+
+    footer #box-slogan {
+        padding: 1rem 0;
+    }
+
+    #nav-icons img {
+        height: 3vw;
+    }
+
+    /* #nav-icons {} */
+
+    #nav-icons img.fleche {
+        height: 6vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main section#home-detail {
+        width: 50vw;
+    }
+
+    main section#multimedia .carousel .flex-items .items-info p {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main section#multimedia .carousel .flex-items .items-info p {
+        font-size: 0.6rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    section#contact p {
+        font-size: 1rem;
+    }
+}
